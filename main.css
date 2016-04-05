@@ -23,6 +23,21 @@ div {
     float: right;
 }
 
+.points {
+	display: flex;
+	color: white;
+	border: none;
+	justify-content: center;
+	align-items: flex-end;
+	font-size: larger;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;      
+}
+
 #gryffindor
 {
 background:url(img/gryffindor.jpg) no-repeat center center;
