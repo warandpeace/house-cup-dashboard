@@ -11,8 +11,6 @@ html, body {
 div {
     width: 50%;
     height: 50%;
-    border: 1px solid silver;
-    margin: 0px -1px;
 }
 
 .pull-left {
