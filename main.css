@@ -8,11 +8,6 @@ html, body {
 
 }
 
-div {
-    width: 50%;
-    height: 50%;
-}
-
 .pull-left {
     float: left;
 }
@@ -28,6 +23,8 @@ div {
 	justify-content: center;
 	align-items: flex-end;
 	font-size: 40px;
+	width: 50%;
+	height: 50%;
 }
 
 #odometer {
@@ -39,27 +36,19 @@ div {
 #gryffindor
 {
 background:url(img/gryffindor.jpg) no-repeat center center;
-height:50%;
-width:50%;
 }
 
 #hufflepuff
 {
 background:url(img/hufflepuff.jpg) no-repeat center center;
-height:50%;
-width:50%;
 }
 
 #ravenclaw
 {
 background:url(img/ravenclaw.jpg) no-repeat center center;
-height:50%;
-width:50%;
 }
 
 #slytherin
 {
 background:url(img/slytherin.jpg) no-repeat center center;
-height:50%;
-width:50%;
 }
