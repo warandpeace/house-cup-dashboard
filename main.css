@@ -30,6 +30,12 @@ div {
 	font-size: 40px;
 }
 
+#odometer {
+	width: 100%;
+	background: none;
+	text-align: center;
+}
+
 #gryffindor
 {
 background:url(img/gryffindor.jpg) no-repeat center center;
