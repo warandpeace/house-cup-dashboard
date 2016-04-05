@@ -27,13 +27,7 @@ div {
 	border: none;
 	justify-content: center;
 	align-items: flex-end;
-	font-size: larger;
-}
-
-span {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;      
+	font-size: 40px;
 }
 
 #gryffindor
