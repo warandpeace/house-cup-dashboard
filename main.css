@@ -4,13 +4,14 @@ html, body {
     height: 100%;
     min-height: 100%;
     overflow: visible;
+    background-color: black;
 
 }
 
 div {
     width: 50%;
     height: 50%;
-    border: 1px solid black;
+    border: 1px solid silver;
     margin: 0px -1px;
 }
 
@@ -24,28 +25,28 @@ div {
 
 #gryffindor
 {
-background:url(http://placekitten.com/400/400) no-repeat center center;
+background:url(img/gryffindor.jpg) no-repeat center center;
 height:50%;
 width:50%;
 }
 
 #hufflepuff
 {
-background:url(http://placekitten.com/400/400) no-repeat center center;
+background:url(img/hufflepuff.jpg) no-repeat center center;
 height:50%;
 width:50%;
 }
 
 #ravenclaw
 {
-background:url(http://placekitten.com/400/400) no-repeat center center;
+background:url(img/ravenclaw.jpg) no-repeat center center;
 height:50%;
 width:50%;
 }
 
 #slytherin
 {
-background:url(http://placekitten.com/400/400) no-repeat center center;
+background:url(img/slytherin.jpg) no-repeat center center;
 height:50%;
 width:50%;
 }
