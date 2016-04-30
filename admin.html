@@ -7,20 +7,32 @@
 	</head>
 
 	<body>
-    <script>dweetio.get_latest_dweet_for("house-cup-dashboard", function(err, dweet){
+		<form action="" method="post">
+			Gryffindor<br>
+			<input type="text" id="gryffindor" value="0"><br>
+			Hufflepuff<br>
+			<input type="text" name="hufflepuff" value="0"><br>
+			Ravenclaw<br>
+			<input type="text" name="ravenclaw" value="0"><br>
+			Slytherin<br>
+			<input type="text" name="slytherin" value="0"><br><br>
+			<input type="submit" value="Submit">
+		</form>
 
-    var dweet = dweet[0]; // Dweet is always an array of 1
 
-    console.log(dweet.thing); // The generated name
-    console.log(dweet.content); // The content of the dweet
-    console.log(dweet.created); // The create date of the dweet
-    
-    var obj = JSON.parse(dweet.content);
-	document.getElementById("demo").innerHTML = obj.hufflepuff;
-});
-</script>
-
-	<p id="demo"></p>
-
+        <script>
+        	function update(d) {
+        		$("#gryffindor .value").text(d.gryffindor);
+        		$("#hufflepuff .odometer").text(d.hufflepuff);
+        		$("#ravenclaw .odometer").text(d.ravenclaw);
+        		$("#slytherin .odometer").text(d.slytherin);
+        	}
+        	dweetio.get_latest_dweet_for("house-cup-dashboard", function(err, dweet){
+        		update(dweet[0].content);
+        	});
+        	dweetio.listen_for("my-thing", function(dweet){
+			update(dweet.content);
+        	});
+        </script>
 	</body>
 </html>
