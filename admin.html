@@ -11,29 +11,38 @@
 		<div class="ui-field-contain">
 			<form action="" method="post">
 				<label for="tel">Gryffindor</label><br>
-				<input type="tel" name="gryffindor" value="0"><br>
+				<input type="tel" id="gryffindor" name="gryffindor" value="0"><br>
 				<label for="tel">Hufflepuff</label><br>
-				<input type="tel" name="hufflepuff" value="0"><br>
+				<input type="tel" id="hufflepuff" name="hufflepuff" value="0"><br>
 				<label for="tel">Ravenclaw</label><br>
-				<input type="tel" name="ravenclaw" value="0"><br>
+				<input type="tel" id="ravenclaw" name="ravenclaw" value="0"><br>
 				<label for="tel">Slytherin</label><br>
-				<input type="tel" name="slytherin" value="0"><br><br>
+				<input type="tel" id="slytherin" name="slytherin" value="0"><br><br>
 				<input type="submit" value="Submit">
 			</form>
 		</div>
 
         <script>
         	function update(d) {
-        		$("#gryffindor input").value(d.gryffindor);
-        		$("#hufflepuff input").value(d.hufflepuff);
-        		$("#ravenclaw input").value(d.ravenclaw);
-        		$("#slytherin input").value(d.slytherin);
+        		$("#gryffindor").val(d.gryffindor);
+        		$("#hufflepuff").val(d.hufflepuff);
+        		$("#ravenclaw").val(d.ravenclaw);
+        		$("#slytherin").val(d.slytherin);
         	}
         	dweetio.get_latest_dweet_for("house-cup-dashboard", function(err, dweet){
         		update(dweet[0].content);
         	});
         	dweetio.listen_for("house-cup-dashboard", function(dweet){
-			update(dweet.content);
+				update(dweet.content);
+        	});
+        	$("form").on("submit", function() {
+	        	dweetio.dweet_for("house-cup-dashboard", 
+	        	{	gryffindor: $("#gryffindor").val(),
+		        	hufflepuff: $("#hufflepuff").val(),
+		        	ravenclaw: $("#ravenclaw").val(),
+		        	slytherin: $("#slytherin").val()
+	        	}, 
+	        	function(err, dweet){});
         	});
         </script>
 	</body>
