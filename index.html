@@ -6,34 +6,41 @@
 		<link href="main.css" rel="stylesheet" media="screen">
 		<link rel="stylesheet" href="https://cdn.rawgit.com/HubSpot/odometer/v0.4.6/themes/odometer-theme-car.css" />
 		<script type="text/javascript" src="https://cdn.rawgit.com/HubSpot/odometer/v0.4.6/odometer.min.js"></script>
+		<script src="https://dweet.io/client/dweet.io.min.js"></script>
 		<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
         <div class="pull-left points" id="gryffindor">
-		    <span class="odometer" id="odometer">1000</span>
+		    <span class="odometer">0</span>
         </div>
 
         <div class="pull-right points" id="hufflepuff">
-		    <span class="odometer" id="odometer"><script>$(document).ready(function() {
-    $("#lesen").click(function() {
-        $.ajax({
-            url : "points/hufflepuff",
-            dataType: "text",
-            success : function (data) {
-                $(".text").html(data);
-            }
-        });
-    }); });</script></span>
+		    <span class="odometer">0</span>
         </div>
 
         <div class="pull-left bottom points" id="ravenclaw">
-		    <span class="odometer" id="odometer">1000</span>
+		    <span class="odometer">0</span>
         </div>
 
         <div class="pull-right bottom points" id="slytherin">
-		    <span class="odometer" id="odometer">1000</span>
+		    <span class="odometer">0</span>
         </div>
+        
+        <script>
+        	function update(d) {
+        		$("#gryffindor .odometer").text(d.gryffindor);
+        		$("#hufflepuff .odometer").text(d.hufflepuff);
+        		$("#ravenclaw .odometer").text(d.ravenclaw);
+        		$("#slytherin .odometer").text(d.slytherin);
+        	}
+        	dweetio.get_latest_dweet_for("house-cup-dashboard", function(err, dweet){
+        		update(dweet[0].content);
+        	});
+        	dweetio.listen_for("my-thing", function(dweet){
+			update(dweet.content);
+        	});
+        </script>
 	</body>
 
 </html>
