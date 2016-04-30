@@ -2,30 +2,32 @@
 	<head>
 		<title>2016 House Cup Admin</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="admin.css" rel="stylesheet" media="screen">
 		<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 		<script src="https://dweet.io/client/dweet.io.min.js"></script>
 	</head>
 
 	<body>
-		<form action="" method="post">
-			<label for="tel">Gryffindor</label><br>
-			<input type="tel" name="gryffindor" value="0"><br>
-			<label for="tel">Hufflepuff</label><br>
-			<input type="tel" name="hufflepuff" value="0"><br>
-			<label for="tel">Ravenclaw</label><br>
-			<input type="tel" name="ravenclaw" value="0"><br>
-			<label for="tel">Slytherin</label><br>
-			<input type="tel" name="slytherin" value="0"><br><br>
-			<input type="submit" value="Submit">
-		</form>
-
+		<div class="ui-field-contain">
+			<form action="" method="post">
+				<label for="tel">Gryffindor</label><br>
+				<input type="tel" name="gryffindor" value="0"><br>
+				<label for="tel">Hufflepuff</label><br>
+				<input type="tel" name="hufflepuff" value="0"><br>
+				<label for="tel">Ravenclaw</label><br>
+				<input type="tel" name="ravenclaw" value="0"><br>
+				<label for="tel">Slytherin</label><br>
+				<input type="tel" name="slytherin" value="0"><br><br>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
 
         <script>
         	function update(d) {
-        		$("#gryffindor .value").text(d.gryffindor);
-        		$("#hufflepuff .odometer").text(d.hufflepuff);
-        		$("#ravenclaw .odometer").text(d.ravenclaw);
-        		$("#slytherin .odometer").text(d.slytherin);
+        		$("#gryffindor input").value(d.gryffindor);
+        		$("#hufflepuff input").value(d.hufflepuff);
+        		$("#ravenclaw input").value(d.ravenclaw);
+        		$("#slytherin input").value(d.slytherin);
         	}
         	dweetio.get_latest_dweet_for("house-cup-dashboard", function(err, dweet){
         		update(dweet[0].content);
