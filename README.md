@@ -22,32 +22,24 @@ Main css for the dashboard, contains everything needed to make this look hella p
 
 Points are currently stored in a totally unsecured JSON endpoint courtesy of Dweet.io
 
-Integrate against https://dweet.io/get/latest/dweet/for/warandpeace-house-cup-dashboard
+Integrate against https://dweet.io/get/latest/dweet/for/house-cup-dashboard
 
 ```
-{
-  "this": "succeeded",
-  "by": "getting",
-  "the": "dweets",
-  "with": [
-    {
-      "thing": "warandpeace-house-cup-dashboard",
-      "created": "2016-04-05T04:28:47.858Z",
-      "content": {
-        "gryffindor": {
-          "points": "0"
-        },
-        "hufflepuff": {
-          "points": "0"
-        },
-        "ravenclaw": {
-          "points": "0"
-        },
-        "slytherin": {
-          "points": "0"
-        }
+{  
+   this:"succeeded",
+   by:"getting",
+   the:"dweets",
+   with:[  
+      {  
+         thing:"house-cup-dashboard",
+         created:"2016-04-30T00:11:45.103Z",
+         content:{  
+            hufflepuff:400,
+            gryffindor:900,
+            ravenclaw:0,
+            slytherin:1000
+         }
       }
-    }
-  ]
+   ]
 }
 ```
