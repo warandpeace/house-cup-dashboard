@@ -37,7 +37,7 @@
         	dweetio.get_latest_dweet_for("house-cup-dashboard", function(err, dweet){
         		update(dweet[0].content);
         	});
-        	dweetio.listen_for("my-thing", function(dweet){
+        	dweetio.listen_for("house-cup-dashboard", function(dweet){
 			update(dweet.content);
         	});
         </script>
